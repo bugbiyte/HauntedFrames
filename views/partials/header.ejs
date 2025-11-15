@@ -1,18 +1,38 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/styles.css">
-</head>
-
-<body>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/signup">Sign Up</a></li>
-      <li><a href="/login">Login</a></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haunted Frames</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="theme-dark">
+    <nav class="horror-nav" aria-label="Primary">
+      <a class="horror-nav__brand" href="/">
+        <span class="horror-nav__title">Haunted Frames</span>
+        <span class="horror-nav__tagline">Discover your next fave horror flick</span>
+      </a>
+      <ul class="horror-nav__cards">
+        <li class="horror-nav__item">
+          <a class="nav-card nav-card--home" href="/">
+            <span class="nav-card__numeral" aria-hidden="true">XVIII</span>
+            <span class="nav-card__icon" aria-hidden="true"></span>
+            <span class="nav-card__label">Home</span>
+          </a>
+        </li>
+        <li class="horror-nav__item">
+          <a class="nav-card nav-card--signup" href="/signup">
+            <span class="nav-card__numeral" aria-hidden="true">XIII</span>
+            <span class="nav-card__icon" aria-hidden="true"></span>
+            <span class="nav-card__label">Sign Up</span>
+          </a>
+        </li>
+        <li class="horror-nav__item">
+          <a class="nav-card nav-card--login" href="/login">
+            <span class="nav-card__numeral" aria-hidden="true">VII</span>
+            <span class="nav-card__icon" aria-hidden="true"></span>
+            <span class="nav-card__label">Login</span>
+          </a>
+        </li>
+      </ul>
+    </nav>

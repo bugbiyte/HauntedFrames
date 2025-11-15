@@ -1,15 +1,25 @@
 <%- include('partials/header'); -%>
 
-<header>
-  <div class="smoothie">
-    <img src="/movie_home.png" alt="">
-  </div>
-  <div class="headings">
-    <h2>Haunted Frames </h2>
-    <h3>“Summon your mood. We’ll summon the movie.</h3>
-    <a href="/madlibs" class="btn">Start the reel</a>
-  </div>
-</header>
-
+<main class="home-landing">
+  <section class="home-hero">
+    <div class="home-hero__text">
+      <p class="home-hero__eyebrow">Lobby whispers</p>
+      <h1>Summon a feeling. We will cue the nightmare.</h1>
+      <p>
+        Slip into the velvet gloom of Haunted Frames. Browse the horror moods, see
+        what’s flickering tonight, and log in when you’re ready to let the reels roll.
+      </p>
+    </div>
+    <div class="home-hero__art" aria-hidden="true">
+      <div class="home-collage">
+        <div class="collage__panel collage__panel--noir"></div>
+        <div class="collage__panel collage__panel--ghoul"></div>
+        <div class="collage__panel collage__panel--celluloid"></div>
+        <div class="collage__panel collage__panel--zombie"></div>
+        <div class="collage__panel collage__panel--mystic"></div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <%- include('partials/footer'); -%>
