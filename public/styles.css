@@ -349,27 +349,29 @@ body.theme-dark {
 .horror-nav__link::before {
   content: '';
   position: absolute;
-  left: 18px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  filter: saturate(1.1);
 }
 
 .horror-nav__link--ghost::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 4c-6.627 0-12 5.373-12 12v11.5c0 2.485 2.015 4.5 4.5 4.5 1.933 0 3.5-.906 4.5-2 1 1.094 2.567 2 4.5 2s3.5-.906 4.5-2c1 1.094 2.567 2 4.5 2 2.485 0 4.5-2.015 4.5-4.5V16c0-6.627-5.373-12-12-12z' fill='%23fefefe' stroke='%239b5dff' stroke-width='1.5'/%3E%3Ccircle cx='15' cy='18' r='2' fill='%23000'/%3E%3Ccircle cx='25' cy='18' r='2' fill='%23000'/%3E%3Cpath d='M14 24c1.333 1.333 3.333 2 6 2s4.667-.667 6-2' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2758%27%20height%3D%2758%27%20viewBox%3D%270%200%2058%2058%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27ghostGlow%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23ff62c0%27/%3E%3Cstop%20offset%3D%2750%25%27%20stop-color%3D%27%236d64ff%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%2300e4ff%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2758%27%20height%3D%2758%27%20rx%3D%2718%27%20fill%3D%27%2305010d%27/%3E%3Cpath%20d%3D%27M29%2010c-9%200-16%207.4-16%2018v17l5.5-4%205.5%204%205.5-4%205.5%204%205.5-4%205.5%204V28c0-10.6-7-18-17-18z%27%20fill%3D%27url(%23ghostGlow)%27%20stroke%3D%27%23fefbff%27%20stroke-width%3D%271.4%27/%3E%3Cpath%20d%3D%27M17%2018c5%202%2011%203%2012%209s-4%2011-2%2017%27%20stroke%3D%27%2300e4ff%27%20stroke-opacity%3D%270.5%27%20stroke-width%3D%271.2%27%20fill%3D%27none%27/%3E%3Ccircle%20cx%3D%2722.5%27%20cy%3D%2727%27%20r%3D%272.8%27%20fill%3D%27%2304030f%27/%3E%3Ccircle%20cx%3D%2735.5%27%20cy%3D%2727%27%20r%3D%272.8%27%20fill%3D%27%2304030f%27/%3E%3Cpath%20d%3D%27M22%2034c2.7%202.5%205.3%203.8%208%203.8s5.3-1.3%208-3.8%27%20stroke%3D%27%23fefbff%27%20stroke-opacity%3D%270.8%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27/%3E%3Cpath%20d%3D%27M20%2014l9-4%209%204%27%20stroke%3D%27%23ffffff%27%20stroke-opacity%3D%270.25%27%20stroke-width%3D%271.2%27%20fill%3D%27none%27/%3E%3C/svg%3E");
 }
 
 .horror-nav__link--chainsaw::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='42' viewBox='0 0 48 42' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='14' width='22' height='14' rx='6' fill='%23ff6b3c' stroke='%23000' stroke-width='2'/%3E%3Crect x='8' y='10' width='12' height='6' rx='3' fill='%23ffc857' stroke='%23000' stroke-width='2'/%3E%3Crect x='24' y='16' width='20' height='10' rx='4' fill='%23c0cad4' stroke='%23000' stroke-width='2'/%3E%3Cpath d='M44 14v14' stroke='%23000' stroke-width='2'/%3E%3Cpath d='M46 15l2 2-2 2 2 2-2 2 2 2' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2758%27%20height%3D%2758%27%20viewBox%3D%270%200%2058%2058%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27sawBody%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23ff7b00%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23ff005d%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27sawBlade%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%270%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23f3f6ff%27/%3E%3Cstop%20offset%3D%2745%25%27%20stop-color%3D%27%239ca7c8%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23fefefe%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2758%27%20height%3D%2758%27%20rx%3D%2718%27%20fill%3D%27%23040407%27/%3E%3Crect%20x%3D%278%27%20y%3D%2719%27%20width%3D%2722%27%20height%3D%2720%27%20rx%3D%278%27%20fill%3D%27url(%23sawBody)%27%20opacity%3D%270.95%27/%3E%3Crect%20x%3D%2712%27%20y%3D%2715%27%20width%3D%2714%27%20height%3D%279%27%20rx%3D%274.5%27%20fill%3D%27%232b1c37%27%20stroke%3D%27%23ffae00%27%20stroke-width%3D%271.2%27/%3E%3Cpath%20d%3D%27M28%2022h18c4%200%208%203%208%207s-4%207-8%207H28%27%20fill%3D%27url(%23sawBlade)%27%20stroke%3D%27%23c8d0e8%27%20stroke-width%3D%271.2%27/%3E%3Cpath%20d%3D%27M44%2021.5l8%206.5-8%206.5%27%20stroke%3D%27%23fe467c%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%20fill%3D%27none%27/%3E%3Ccircle%20cx%3D%2718%27%20cy%3D%2729%27%20r%3D%273.5%27%20fill%3D%27%230b0611%27%20stroke%3D%27%23ffd6a8%27%20stroke-width%3D%271.4%27/%3E%3Cpath%20d%3D%27M6%2024l4%201v8l-4%201%27%20stroke%3D%27%23ff9b4a%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27/%3E%3Cpath%20d%3D%27M10%2033l2.5%204M10%2023l2.5-4%27%20stroke%3D%27%23fefefe%27%20stroke-opacity%3D%270.4%27%20stroke-width%3D%271.2%27/%3E%3C/svg%3E");
 }
 
 .horror-nav__link--knife::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='46' height='42' viewBox='0 0 46 42' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 26l22-16 10 10-22 16z' fill='url(%23blade)' stroke='%23f4f7ff' stroke-width='1.4'/%3E%3Cpath d='M4 28l4 4-4 4-4-4z' fill='%238c1919' stroke='%23000' stroke-width='1.2'/%3E%3Cdefs%3E%3ClinearGradient id='blade' x1='6' y1='16' x2='36' y2='32' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23f3f6ff'/%3E%3Cstop offset='0.5' stop-color='%23a8b0c4'/%3E%3Cstop offset='1' stop-color='%23dce0ef'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2758%27%20height%3D%2758%27%20viewBox%3D%270%200%2058%2058%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27bladeCore%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%270%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23f0f7ff%27/%3E%3Cstop%20offset%3D%2755%25%27%20stop-color%3D%27%239cb6d9%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23f9fbff%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27handle%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%232a0418%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%238c123d%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2758%27%20height%3D%2758%27%20rx%3D%2718%27%20fill%3D%27%2303030a%27/%3E%3Cpath%20d%3D%27M10%2036l30-22%208%208-30%2022z%27%20fill%3D%27url(%23bladeCore)%27%20stroke%3D%27%23f8fbff%27%20stroke-width%3D%271.4%27/%3E%3Cpath%20d%3D%27M8%2038l6%206-6%206-6-6z%27%20fill%3D%27url(%23handle)%27%20stroke%3D%27%23f2577a%27%20stroke-width%3D%271.2%27/%3E%3Cpath%20d%3D%27M34%2016l8%208%206-2-5-5z%27%20fill%3D%27%231d0d33%27%20opacity%3D%270.5%27/%3E%3Cpath%20d%3D%27M16%2034l6%206%27%20stroke%3D%27%239cb6d9%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27/%3E%3Ccircle%20cx%3D%2711%27%20cy%3D%2741%27%20r%3D%271.3%27%20fill%3D%27%23f8fbff%27/%3E%3C/svg%3E");
 }
 
 .horror-nav__link::after {
