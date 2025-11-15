@@ -1,15 +1,64 @@
 <%- include('partials/header'); -%>
 
-<header>
-  <div class="smoothie">
-    <img src="/movie_home.png" alt="">
-  </div>
-  <div class="headings">
-    <h2>Haunted Frames </h2>
-    <h3>“Summon your mood. We’ll summon the movie.</h3>
-    <a href="/madlibs" class="btn">Start the reel</a>
-  </div>
-</header>
+<main class="home-landing">
+  <section class="home-hero">
+    <div class="home-hero__text">
+      <p class="home-hero__eyebrow">Lobby whispers</p>
+      <h1>Summon a feeling. We will cue the nightmare.</h1>
+      <p>
+        Slip into the velvet gloom of Haunted Frames. Browse the horror moods, see
+        what’s flickering tonight, and log in when you’re ready to let the reels roll.
+      </p>
+      <ul class="home-hero__moods" aria-label="Sample moods">
+        <li>Witching hour romance</li>
+        <li>Neon occult</li>
+        <li>Cathedral dread</li>
+      </ul>
+    </div>
+    <div class="home-hero__art" aria-hidden="true">
+      <div class="home-hero__glow home-hero__glow--violet"></div>
+      <div class="home-hero__glow home-hero__glow--crimson"></div>
+      <figure class="home-hero__screen">
+        <img src="/movie.png" alt="Collage of haunted cinema props" />
+        <figcaption>Never the same scare twice.</figcaption>
+      </figure>
+      <div class="home-hero__sigil">
+        <span>Reels</span>
+        <span>Ritual</span>
+      </div>
+    </div>
+  </section>
 
+  <section class="home-panels" aria-label="Why Haunted Frames">
+    <article class="home-panels__card">
+      <h3>Pick a vibe first</h3>
+      <p>We catalog scares by mood, not genre. Think feelings: glassy sorrow, glamorous gore, cosmic ache.</p>
+    </article>
+    <article class="home-panels__card">
+      <h3>Login to awaken the reel</h3>
+      <p>
+        Once you sign in, the <strong>Start the Reel</strong> ritual unlocks curated cards, interactive reveals, and
+        cinematic dares tailored to your answers.
+      </p>
+    </article>
+    <article class="home-panels__card">
+      <h3>Stay awhile</h3>
+      <p>
+        Bookmark moods, tease future screenings, or just lurk in the lobby until you’re brave enough to proceed.
+      </p>
+    </article>
+  </section>
+
+  <section class="home-marquee" aria-label="Sample experiences">
+    <div class="home-marquee__track">
+      <span>blood moon lullaby</span>
+      <span>flicker-faint heartbreak</span>
+      <span>ritualistic couture</span>
+      <span>fog-drenched sci-fi</span>
+      <span>lofi eldritch dreams</span>
+      <span>neon exorcism</span>
+    </div>
+  </section>
+</main>
 
 <%- include('partials/footer'); -%>
