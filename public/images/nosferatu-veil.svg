@@ -1,0 +1,20 @@
+<svg width="640" height="960" viewBox="0 0 640 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c1d7ff" stop-opacity="0.25" />
+      <stop offset="30%" stop-color="#d0a9ff" stop-opacity="0.32" />
+      <stop offset="70%" stop-color="#5d1f4a" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#050009" stop-opacity="0.7" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.2" r="0.7">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.65" />
+      <stop offset="45%" stop-color="#bd78ff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0b0017" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="960" fill="url(#glow)" />
+  <path d="M333 60c-24 12-38 52-40 92l-2 62-64 52c-24 20-44 66-32 94l26 66-20 150c-6 42 8 86 38 114l82 72c22 20 56 20 78 0l82-72c30-28 44-72 38-114l-20-150 26-66c12-28-8-74-32-94l-64-52-2-62c-2-40-16-80-40-92s-52-12-74 0z" fill="url(#body)" opacity="0.75" />
+  <path d="M268 210c12-6 34-10 52-10s40 4 52 10c10 6 12 16 6 22-8 8-30 10-58 10s-50-2-58-10c-6-6-4-16 6-22z" fill="#f8f1ff" fill-opacity="0.25" />
+  <path d="M308 170c0 6-6 12-12 12s-12-6-12-12 6-14 12-14 12 8 12 14zm48 0c0 6-6 12-12 12s-12-6-12-12 6-14 12-14 12 8 12 14z" fill="#fefefe" fill-opacity="0.65" />
+  <path d="M260 470c0-20 18-36 40-36h40c22 0 40 16 40 36v92c0 18-16 32-36 32h-48c-20 0-36-14-36-32v-92z" fill="#09030d" fill-opacity="0.35" />
+</svg>
