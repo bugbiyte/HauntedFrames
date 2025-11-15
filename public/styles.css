@@ -281,6 +281,7 @@ footer {
 p {
   color: #d6cbc1;
 }
+
 body.theme-dark {
   margin: 0;
   padding: 32px 40px 80px;
@@ -509,20 +510,16 @@ body.theme-dark {
 .home-reel__film {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-      90deg,
+  background: repeating-linear-gradient(90deg,
       rgba(0, 0, 0, 0.35) 0px,
       rgba(0, 0, 0, 0.35) 6px,
       transparent 6px,
-      transparent 26px
-    ),
-    repeating-linear-gradient(
-      0deg,
+      transparent 26px),
+    repeating-linear-gradient(0deg,
       rgba(0, 0, 0, 0.35) 0px,
       rgba(0, 0, 0, 0.35) 6px,
       transparent 6px,
-      transparent 26px
-    );
+      transparent 26px);
   opacity: 0.08;
   mix-blend-mode: screen;
   pointer-events: none;
