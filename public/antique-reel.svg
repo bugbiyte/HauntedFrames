@@ -1,0 +1,52 @@
+<svg width="560" height="420" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Antique movie reel">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#f9e6c4" stop-opacity="0.8" />
+      <stop offset="45%" stop-color="#b88662" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#2c1f1a" stop-opacity="1" />
+    </radialGradient>
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a2c1f" />
+      <stop offset="100%" stop-color="#120a08" />
+    </linearGradient>
+    <linearGradient id="strap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f1b16" />
+      <stop offset="100%" stop-color="#050404" />
+    </linearGradient>
+  </defs>
+  <rect width="560" height="420" rx="42" fill="#050304" />
+  <rect x="20" y="20" width="520" height="380" rx="32" fill="#110d11" stroke="#2c2623" stroke-width="4" />
+  <rect x="80" y="180" width="400" height="28" rx="14" fill="url(#strap)" opacity="0.65" />
+  <rect x="140" y="170" width="280" height="48" rx="24" fill="#090606" stroke="#433326" stroke-width="3" />
+  <g transform="translate(115 210)">
+    <circle cx="80" cy="0" r="78" fill="url(#rim)" stroke="#c59a74" stroke-width="4" />
+    <circle cx="80" cy="0" r="54" fill="url(#glow)" />
+    <circle cx="80" cy="0" r="16" fill="#1b120d" />
+    <g fill="#1c1410">
+      <circle cx="80" cy="-40" r="9" />
+      <circle cx="120" cy="-12" r="9" />
+      <circle cx="40" cy="-12" r="9" />
+      <circle cx="120" cy="14" r="9" />
+      <circle cx="40" cy="14" r="9" />
+      <circle cx="80" cy="42" r="9" />
+    </g>
+  </g>
+  <g transform="translate(285 210)">
+    <circle cx="80" cy="0" r="78" fill="url(#rim)" stroke="#c59a74" stroke-width="4" />
+    <circle cx="80" cy="0" r="54" fill="url(#glow)" />
+    <circle cx="80" cy="0" r="16" fill="#1b120d" />
+    <g fill="#1c1410">
+      <circle cx="80" cy="-40" r="9" />
+      <circle cx="120" cy="-12" r="9" />
+      <circle cx="40" cy="-12" r="9" />
+      <circle cx="120" cy="14" r="9" />
+      <circle cx="40" cy="14" r="9" />
+      <circle cx="80" cy="42" r="9" />
+    </g>
+  </g>
+  <rect x="96" y="140" width="368" height="16" rx="8" fill="#1b1610" opacity="0.7" />
+  <rect x="96" y="240" width="368" height="16" rx="8" fill="#1b1610" opacity="0.7" />
+  <rect x="220" y="100" width="120" height="220" rx="32" fill="#160f0d" stroke="#6b4631" stroke-width="4" />
+  <circle cx="280" cy="210" r="12" fill="#cfa477" />
+  <rect x="200" y="80" width="160" height="12" rx="6" fill="#080505" opacity="0.6" />
+</svg>
