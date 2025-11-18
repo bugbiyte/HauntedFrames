@@ -33,7 +33,7 @@ h4 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 1em;
   font-weight: 900;
   margin-bottom: 20px;
   color: #c7a0ff;
@@ -274,7 +274,7 @@ header .btn {
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 2rem;
+  font-size: 1 rem;
   color: #ff74d1;
   background: transparent;
   border: none;
@@ -552,9 +552,11 @@ body.theme-dark {
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(-4%, -2%, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }

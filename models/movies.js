@@ -1,16 +1,15 @@
-// models/User.js
+// models/Movie.js
 const mongoose = require('mongoose');
 
-
-const userSchema = new mongoose.Schema(
+const movieSchema = new mongoose.Schema(
   {
-    movie: {
-      type: String,
-    },
-
-}
+    title: { type: String, required: true },
+    year: Number,
+    poster: String,
+    description: String,
+    mood: [String], // e.g. ["bloody-sad", "freaky-but-chic"]
+  },
+  { timestamps: true }
 );
 
-userSchema.index({ email: 1 }, { unique: true });
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Movie', movieSchema);

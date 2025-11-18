@@ -57,29 +57,36 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes');
+const movieRoutes = require('./routes/movieRoutes');
 
+// create app FIRST
 const app = express();
 
-// ---- Parsers & logging ----
+// Parsers & logging
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
-  console.log(`[REQ] ${req.method} ${req.originalUrl}`);
+  console.log('[REQ]', req.method, req.originalUrl);
   next();
 });
+
+// Cookies
 app.use(cookieParser());
 
-// ---- Static & views ----
+// Static + views
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// ---- Basic pages ----
+// Basic pages
 app.get('/madlibs', (req, res) => res.render('madlibs'));
 app.get('/', (req, res) => res.render('home'));
 
-// ---- Auth routes (/signup, /login, /logout) ----
+// Auth routes
 app.use(authRoutes);
+
+// Movie routes
+app.use(movieRoutes);
 
 // 404
 app.use((req, res) => res.status(404).send('Not found'));
