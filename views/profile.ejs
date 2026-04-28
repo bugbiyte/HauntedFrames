@@ -30,7 +30,10 @@
               <td>
                 <div class="haunt-table__title">
                   <% if (movie.poster) { %>
-                    <img src="<%= movie.poster %>" alt="<%= movie.title %>" class="haunt-table__poster" />
+                    <img src="<%= movie.poster %>" alt="<%= movie.title %>" class="haunt-table__poster"
+                      onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'haunt-table__poster haunt-table__poster--fallback', textContent: '🦴'}));" />
+                  <% } else { %>
+                    <div class="haunt-table__poster haunt-table__poster--fallback">🦴</div>
                   <% } %>
                   <span><%= movie.title %></span>
                 </div>

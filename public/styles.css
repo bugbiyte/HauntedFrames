@@ -838,6 +838,15 @@ body.theme-dark {
   flex-shrink: 0;
 }
 
+.haunt-table__poster--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background: rgba(194, 56, 51, 0.1);
+  border-color: rgba(194, 56, 51, 0.2);
+}
+
 .haunt-table__year {
   color: rgba(242, 231, 222, 0.45);
   font-size: 0.85rem;
