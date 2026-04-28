@@ -126,12 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTitle = document.getElementById("card-modal-title");
   const modalDescription = document.getElementById("card-modal-description");
   const modalClose = document.querySelector(".card-modal__close");
+  const addBtn = document.querySelector(".card-modal__add");
+  const refreshBtn = document.querySelector(".card-modal__refresh");
 
-  const thumbsUpBtn = document.querySelector(".card-modal__thumb--up");
-  const thumbsDownBtn = document.querySelector(".card-modal__thumb--down");
-
-  // We'll store the current movie's ID here (if provided by the API)
   let currentMovieId = null;
+  let currentMood = null;
 
   if (!modal || !modalTitle || !modalDescription) {
     console.error("Modal elements not found in DOM.");
@@ -145,88 +144,107 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeModal() {
     modal.classList.add("hidden");
     currentMovieId = null;
-
-    // optional: reset button visual state
-    if (thumbsUpBtn) thumbsUpBtn.classList.remove("is-active");
-    if (thumbsDownBtn) thumbsDownBtn.classList.remove("is-active");
+    currentMood = null;
+    if (addBtn) addBtn.classList.remove("is-active");
   }
 
   if (modalClose) {
     modalClose.addEventListener("click", closeModal);
   }
 
-  // Attach click handlers to mood cards
+  async function loadMovie(mood, fallbackTitle) {
+    modalTitle.textContent = fallbackTitle || "Loading...";
+    modalDescription.textContent = "Summoning a film from the void...";
+    if (addBtn) addBtn.classList.remove("is-active");
+
+    try {
+      const response = await fetch(`/api/movies/${mood}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        modalDescription.textContent = data.error || "No movie found for that mood.";
+        return;
+      }
+
+      currentMovieId = data._id || null;
+      currentMood = mood;
+
+      modalTitle.textContent = data.title || fallbackTitle || "Untitled Horror";
+      modalDescription.textContent =
+        data.description ||
+        data.overview ||
+        "This movie is so mysterious, even the database is scared.";
+
+    } catch (err) {
+      console.error("Error fetching movie:", err);
+      modalDescription.textContent = "Server error fetching movie.";
+    }
+  }
+
   cards.forEach(card => {
     card.addEventListener("click", async () => {
-      const mood = card.dataset.mood;   // e.g. "freaky-but-chic"
-      const title = card.dataset.title; // fallback
+      const mood = card.dataset.mood;
+      const title = card.dataset.title;
 
       if (!mood) {
         console.warn("Card clicked without data-mood", card);
         return;
       }
 
-      modalTitle.textContent = title || "Loading...";
-      modalDescription.textContent = "Summoning a movie from the void...";
       openModal();
-
-      try {
-        const response = await fetch(`/api/movies/${mood}`);
-        const data = await response.json();
-
-        if (!response.ok) {
-          modalDescription.textContent = data.error || "No movie found for that mood.";
-          return;
-        }
-
-        // Expecting your API to return a movie document with _id, title, description, etc.
-        currentMovieId = data._id || null;
-
-        modalTitle.textContent = data.title || title || "Untitled Horror";
-        modalDescription.textContent =
-          data.description ||
-          data.overview ||
-          "This movie is so mysterious, even the database is scared.";
-
-      } catch (err) {
-        console.error("Error fetching movie:", err);
-        modalDescription.textContent = "Server error fetching movie.";
-      }
+      await loadMovie(mood, title);
     });
   });
 
-  // Skeleton thumbs interactions
-  function handleVote(direction) {
-    if (!currentMovieId) {
-      console.log("No movie loaded yet, but vote clicked:", direction);
-      return;
-    }
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", async () => {
+      if (!currentMood) return;
+      refreshBtn.classList.add("is-spinning");
+      await loadMovie(currentMood);
+      refreshBtn.classList.remove("is-spinning");
+    });
+  }
 
-    console.log(`User voted '${direction}' for movie ID:`, currentMovieId);
+  async function handleAdd() {
+    if (!currentMovieId) return;
 
-    // OPTIONAL: future API call – you can wire this later
-    // fetch(`/api/movies/${currentMovieId}/vote`, {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ vote: direction })
-    // });
+    addBtn.classList.add("is-active");
 
-    // Simple UI feedback: toggle active class
-    if (direction === "up") {
-      thumbsUpBtn.classList.add("is-active");
-      thumbsDownBtn.classList.remove("is-active");
-    } else {
-      thumbsDownBtn.classList.add("is-active");
-      thumbsUpBtn.classList.remove("is-active");
+    try {
+      const res = await fetch(`/api/movies/${currentMovieId}/vote`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ vote: "up" }),
+      });
+      const data = await res.json();
+
+      if (!data.saved) {
+        showHint("Log in to save films to your haunt");
+        addBtn.classList.remove("is-active");
+      } else {
+        showHint("Added to your haunt 🦴");
+      }
+    } catch (err) {
+      console.error("Vote error:", err);
+      addBtn.classList.remove("is-active");
     }
   }
 
-  if (thumbsUpBtn) {
-    thumbsUpBtn.addEventListener("click", () => handleVote("up"));
+  function showHint(message) {
+    let hint = modal.querySelector(".card-modal__vote-hint");
+    if (!hint) {
+      hint = document.createElement("p");
+      hint.className = "card-modal__vote-hint";
+      modal.querySelector(".card-modal__actions").after(hint);
+    }
+    hint.textContent = message;
+    hint.style.opacity = "1";
+    clearTimeout(hint._timeout);
+    hint._timeout = setTimeout(() => { hint.style.opacity = "0"; }, 3000);
   }
 
-  if (thumbsDownBtn) {
-    thumbsDownBtn.addEventListener("click", () => handleVote("down"));
+  if (addBtn) {
+    addBtn.addEventListener("click", handleAdd);
   }
 });
 

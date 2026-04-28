@@ -1,0 +1,79 @@
+<%- include('partials/header'); -%>
+
+<main class="profile-page">
+
+  <section class="profile-hero">
+    <p class="profile-hero__eyebrow">Your Haunt</p>
+    <h3>Saved Films</h3>
+    <p class="profile-hero__email"><%= locals.user ? locals.user.email : '' %></p>
+  </section>
+
+  <section class="profile-collection">
+    <% if (!movies || movies.length === 0) { %>
+      <div class="profile-empty">
+        <p>No films saved yet. Go summon a mood and upvote something...</p>
+        <a href="/haunts" class="btn btn--outline" style="margin-top:24px; display:inline-flex;">Summon A Mood</a>
+      </div>
+    <% } else { %>
+      <table class="haunt-table">
+        <thead>
+          <tr>
+            <th>Film</th>
+            <th>Year</th>
+            <th>Mood</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% movies.forEach(movie => { %>
+            <tr class="haunt-table__row" data-movie-id="<%= movie._id %>">
+              <td>
+                <div class="haunt-table__title">
+                  <% if (movie.poster) { %>
+                    <img src="<%= movie.poster %>" alt="<%= movie.title %>" class="haunt-table__poster" />
+                  <% } %>
+                  <span><%= movie.title %></span>
+                </div>
+              </td>
+              <td class="haunt-table__year"><%= movie.year || '—' %></td>
+              <td>
+                <div class="haunt-table__moods">
+                  <% (movie.mood || []).forEach(m => { %>
+                    <span class="mood-tag"><%= m %></span>
+                  <% }) %>
+                </div>
+              </td>
+              <td>
+                <button class="haunt-table__remove" data-movie-id="<%= movie._id %>">Remove</button>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </section>
+
+</main>
+
+<%- include('partials/footer'); -%>
+
+<script>
+  document.querySelectorAll('.haunt-table__remove').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const movieId = btn.dataset.movieId;
+      const row = btn.closest('tr');
+      btn.disabled = true;
+      try {
+        const res = await fetch(`/api/profile/unsave/${movieId}`, { method: 'POST' });
+        if (res.ok) {
+          row.style.opacity = '0';
+          row.style.transition = 'opacity 0.3s ease';
+          setTimeout(() => row.remove(), 300);
+        }
+      } catch (err) {
+        btn.disabled = false;
+        console.error('Remove failed', err);
+      }
+    });
+  });
+</script>

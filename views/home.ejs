@@ -10,9 +10,14 @@
           what’s flickering tonight, and log in when you’re ready to let the reels roll.
         </p>
         <div class="home-hero__actions">
-          <a href="/signup" class="btn btn--primary">Sign Up</a>
-          <a href="/madlibs" class="btn btn--outline">Summon A Mood</a>
-          <a href="/login" class="btn btn--ghost">Log In</a>
+          <% if (locals.user) { %>
+            <a href="/profile" class="btn btn--primary">My Profile</a>
+            <a href="/haunts" class="btn btn--outline">Summon A Mood</a>
+          <% } else { %>
+            <a href="/signup" class="btn btn--primary">Sign Up</a>
+            <a href="/haunts" class="btn btn--outline">Summon A Mood</a>
+            <a href="/login" class="btn btn--ghost">Log In</a>
+          <% } %>
         </div>
       </div>
       <div class="home-hero__art" aria-hidden="true">

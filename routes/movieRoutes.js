@@ -10,14 +10,13 @@
 // router.get('/movie/:id', movieController.showMoviePage);
 
 // module.exports = router;
-// routes/movieRoutes.js
 const express = require('express');
 const router = express.Router();
-
-const movieController = require('../controllers/moviecontroller'); 
-// ⚠️ must match your file name EXACTLY (case-sensitive)
+const attachUser = require('../middleware/attachUser');
+const movieController = require('../controllers/moviecontroller');
 
 router.get('/api/movies/:mood', movieController.getRandomMovieByMood);
 router.get('/movie/:id', movieController.showMoviePage);
+router.post('/api/movies/:id/vote', attachUser, movieController.voteMovie);
 
 module.exports = router;

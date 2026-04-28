@@ -22,12 +22,21 @@ mongoose.connect(MONGO_URI)
   })
   .catch((err) => {
     console.error('❌ MongoDB connection failed:', err.message);
-    // Start server anyway so EJS pages render while you fix DB creds
+    console.warn('⚠️  Starting without DB — pages will render but auth/data won\'t work.');
     start();
   });
 
 function start() {
-  app.listen(PORT, () => {
+  const server = app.listen(PORT, () => {
     console.log(`🚀 Server running at http://localhost:${PORT}`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`❌ Port ${PORT} is already in use. Run: lsof -ti :${PORT} | xargs kill -9`);
+    } else {
+      console.error('❌ Server error:', err.message);
+    }
+    process.exit(1);
   });
 }

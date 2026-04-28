@@ -52,23 +52,20 @@
       <h2 id="card-modal-title" class="card-modal__title"></h2>
       <p id="card-modal-description" class="card-modal__description"></p>
 
-      <!-- 🦴 Skeleton thumbs actions -->
+      <!-- modal actions -->
       <div class="card-modal__actions">
-        <button type="button" class="card-modal__thumb card-modal__thumb--up" data-vote="up"
-          aria-label="Skeleton thumbs up">
-          🦴
+        <button type="button" class="card-modal__add" data-vote="up" aria-label="Add to haunt">
+          🦴 <span>Add to My Haunt</span>
         </button>
-
-        <button type="button" class="card-modal__thumb card-modal__thumb--down" data-vote="down"
-          aria-label="Skeleton thumbs down">
-          👎
+        <button type="button" class="card-modal__refresh" aria-label="Show another film">
+          ↻ <span>Haunt Me Again</span>
         </button>
       </div>
     </div>
   </div>
 
 
-  <script src="/madlibs.js" defer></script>
+  <script src="/haunts.js" defer></script>
 
 
   <%- include('partials/footer'); -%>

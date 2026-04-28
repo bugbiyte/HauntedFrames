@@ -35,10 +35,10 @@
 //     res.status(500).send('Server error');
 //   }
 // };
-// controllers/movieController.js
-// controllers/movieController.js
 // controllers/moviecontroller.js
-const Movie = require('../models/movies'); // make sure this filename exists
+const Movie = require('../models/movies');
+const Vote = require('../models/Vote');
+const User = require('../models/User');
 
 // GET /api/movies/:mood  -> random movie for that mood
 exports.getRandomMovieByMood = async (req, res) => {
@@ -79,4 +79,34 @@ exports.showMoviePage = async (req, res) => {
     console.error('Error loading movie page:', err);
     res.status(500).send('Server error');
   }
+};
+
+// POST /api/movies/:id/vote
+exports.voteMovie = async (req, res) => {
+  const { vote } = req.body;
+  const { id: movieId } = req.params;
+
+  if (!['up', 'down'].includes(vote)) {
+    return res.status(400).json({ error: 'Invalid vote.' });
+  }
+
+  if (!req.user) {
+    return res.json({ saved: false, message: 'Log in to save votes to your profile.' });
+  }
+
+  const userId = req.user._id;
+
+  await Vote.findOneAndUpdate(
+    { userId, movieId },
+    { vote },
+    { upsert: true, new: true }
+  );
+
+  if (vote === 'up') {
+    await User.findByIdAndUpdate(userId, { $addToSet: { savedMovies: movieId } });
+  } else {
+    await User.findByIdAndUpdate(userId, { $pull: { savedMovies: movieId } });
+  }
+
+  return res.json({ saved: true, vote });
 };

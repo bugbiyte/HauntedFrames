@@ -24,7 +24,7 @@
 // });
 
 // // ---- Your pages ----
-// app.get('/madlibs', (req, res) => res.render('madlibs'));
+// app.get('/haunts', (req, res) => res.render('haunts'));
 // app.get('/', (req, res) => res.render('home'));
 
 // // ---- Mount real routers AFTER parsers ----
@@ -52,43 +52,42 @@
 
 // module.exports = app;
 
-// app.js
 const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const attachUser = require('./middleware/attachUser');
 const authRoutes = require('./routes/authRoutes');
 const movieRoutes = require('./routes/movieRoutes');
+const profileRoutes = require('./routes/profileRoutes');
 
-// create app FIRST
 const app = express();
 
-// Parsers & logging
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   console.log('[REQ]', req.method, req.originalUrl);
   next();
 });
-
-// Cookies
 app.use(cookieParser());
 
-// Static + views
+// Attach logged-in user to every request + make available in all EJS views
+app.use(attachUser);
+app.use((req, res, next) => {
+  res.locals.user = req.user || null;
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Basic pages
-app.get('/madlibs', (req, res) => res.render('madlibs'));
+app.get('/haunts', (req, res) => res.render('haunts'));
 app.get('/', (req, res) => res.render('home'));
 
-// Auth routes
 app.use(authRoutes);
-
-// Movie routes
 app.use(movieRoutes);
+app.use(profileRoutes);
 
-// 404
 app.use((req, res) => res.status(404).send('Not found'));
 
 module.exports = app;
