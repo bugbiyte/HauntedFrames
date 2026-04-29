@@ -1,5 +1,5 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 body {
   margin: 20px 40px;
@@ -24,7 +24,7 @@ div,
 footer {
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #f5efe6;
 }
 
@@ -47,7 +47,6 @@ a {
   text-decoration: none;
 }
 
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -59,7 +58,11 @@ a {
   letter-spacing: 0.14rem;
   text-transform: uppercase;
   font-weight: 700;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
   border: 1px solid transparent;
 }
 
@@ -159,7 +162,7 @@ header img {
 }
 
 header h2 {
-  font-family: 'Caesar Dressing', cursive;
+  font-family: "Caesar Dressing", cursive;
   font-weight: 900;
   color: #caa56d;
   font-size: 5em;
@@ -170,7 +173,7 @@ header h3 {
   font-size: 1.6em;
   margin-bottom: 10px;
   margin-left: 2px;
-  font-family: 'Pirata One', cursive;
+  font-family: "Pirata One", cursive;
   color: #f7f4ff;
 }
 
@@ -228,7 +231,11 @@ header .btn {
   text-align: center;
   padding: 20px 20px 30px 20px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
   outline: none;
 }
 
@@ -341,7 +348,11 @@ header .btn {
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   margin-top: 0;
 }
 
@@ -439,7 +450,11 @@ body.theme-dark {
   display: grid;
   place-items: center;
   font-size: 1.4rem;
-  background: radial-gradient(circle at 30% 30%, rgba(249, 200, 161, 0.3), rgba(222, 93, 72, 0.12));
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(249, 200, 161, 0.3),
+    rgba(222, 93, 72, 0.12)
+  );
   border: 1px solid rgba(247, 206, 172, 0.28);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
   flex-shrink: 0;
@@ -491,7 +506,10 @@ body.theme-dark {
   color: rgba(252, 249, 255, 0.8);
   border: 1px solid transparent;
   white-space: nowrap;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .horror-nav__link:hover,
@@ -531,7 +549,12 @@ body.theme-dark {
   border: 1px solid rgba(160, 40, 40, 0.25);
   position: relative;
   overflow: hidden;
-  background: linear-gradient(160deg, rgba(4, 2, 8, 0.98), rgba(8, 4, 14, 0.96), rgba(3, 8, 5, 0.95));
+  background: linear-gradient(
+    160deg,
+    rgba(4, 2, 8, 0.98),
+    rgba(8, 4, 14, 0.96),
+    rgba(3, 8, 5, 0.95)
+  );
   box-shadow:
     0 50px 100px rgba(0, 0, 0, 0.9),
     0 0 90px rgba(100, 15, 20, 0.18),
@@ -540,7 +563,7 @@ body.theme-dark {
 }
 
 .home-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background:
@@ -558,7 +581,7 @@ body.theme-dark {
 }
 
 .home-hero__text h3 {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: "Cinzel Decorative", serif;
   font-size: clamp(1.6rem, 3vw, 2.8rem);
   color: #f0e6d3;
   margin-bottom: 18px;
@@ -577,10 +600,10 @@ body.theme-dark {
 }
 
 .home-hero__eyebrow {
-  letter-spacing: 6px;
+  letter-spacing: 10px;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-family: "Cinzel", serif;
   margin-bottom: 14px;
   color: rgba(140, 200, 150, 0.8);
   text-shadow: 0 0 14px rgba(80, 180, 100, 0.55);
@@ -614,7 +637,11 @@ body.theme-dark {
   inset: 0;
   background:
     radial-gradient(ellipse at 55% 85%, rgba(20, 90, 40, 0.3), transparent 50%),
-    radial-gradient(circle at 25% 50%, rgba(255, 255, 255, 0.06), transparent 45%),
+    radial-gradient(
+      circle at 25% 50%,
+      rgba(255, 255, 255, 0.06),
+      transparent 45%
+    ),
     linear-gradient(180deg, rgba(5, 3, 8, 0.5), rgba(5, 3, 8, 0));
   animation: drift 18s ease-in-out infinite;
   mix-blend-mode: screen;
@@ -627,7 +654,6 @@ body.theme-dark {
   margin-top: 28px;
   align-items: center;
 }
-
 
 @media (max-width: 960px) {
   .horror-nav__divider,
@@ -712,31 +738,92 @@ body.theme-dark {
 }
 
 @keyframes drift {
-  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
-  25%  { transform: translate3d(-2%, -1%, 0) scale(1.02); opacity: 1; }
-  50%  { transform: translate3d(-4%, -2%, 0) scale(1.03); opacity: 0.9; }
-  75%  { transform: translate3d(-1.5%, -0.8%, 0) scale(1.01); opacity: 1; }
-  100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translate3d(-2%, -1%, 0) scale(1.02);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(-4%, -2%, 0) scale(1.03);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translate3d(-1.5%, -0.8%, 0) scale(1.01);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
 }
 
 @keyframes ghostPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.7;
     text-shadow: 0 0 14px rgba(80, 180, 100, 0.55);
   }
   50% {
     opacity: 1;
-    text-shadow: 0 0 22px rgba(90, 200, 110, 0.9), 0 0 44px rgba(50, 140, 70, 0.45);
+    text-shadow:
+      0 0 22px rgba(90, 200, 110, 0.9),
+      0 0 44px rgba(50, 140, 70, 0.45);
   }
 }
 
 @keyframes flicker {
-  0%, 100% { text-shadow: 0 0 25px rgba(210, 90, 60, 0.65), 0 0 55px rgba(190, 60, 40, 0.3), 0 0 100px rgba(150, 30, 20, 0.15), 0 2px 6px rgba(0,0,0,0.9); opacity: 1; }
-  8%        { text-shadow: 0 0 18px rgba(210, 90, 60, 0.5),  0 0 40px rgba(190, 60, 40, 0.2), 0 0 80px rgba(150, 30, 20, 0.1),  0 2px 6px rgba(0,0,0,0.9); opacity: 0.92; }
-  20%       { text-shadow: 0 0 28px rgba(220, 100, 70, 0.7), 0 0 60px rgba(200, 70, 50, 0.35), 0 0 110px rgba(160, 40, 25, 0.18), 0 2px 6px rgba(0,0,0,0.9); opacity: 1; }
-  45%       { text-shadow: 0 0 20px rgba(210, 90, 60, 0.55), 0 0 45px rgba(190, 60, 40, 0.25), 0 0 90px rgba(150, 30, 20, 0.12), 0 2px 6px rgba(0,0,0,0.9); opacity: 0.95; }
-  70%       { text-shadow: 0 0 30px rgba(220, 100, 70, 0.72), 0 0 62px rgba(200, 70, 50, 0.38), 0 0 115px rgba(160, 40, 25, 0.2), 0 2px 6px rgba(0,0,0,0.9); opacity: 1; }
-  85%       { text-shadow: 0 0 16px rgba(210, 90, 60, 0.45), 0 0 38px rgba(190, 60, 40, 0.18), 0 0 75px rgba(150, 30, 20, 0.08), 0 2px 6px rgba(0,0,0,0.9); opacity: 0.9; }
+  0%,
+  100% {
+    text-shadow:
+      0 0 25px rgba(210, 90, 60, 0.65),
+      0 0 55px rgba(190, 60, 40, 0.3),
+      0 0 100px rgba(150, 30, 20, 0.15),
+      0 2px 6px rgba(0, 0, 0, 0.9);
+    opacity: 1;
+  }
+  8% {
+    text-shadow:
+      0 0 18px rgba(210, 90, 60, 0.5),
+      0 0 40px rgba(190, 60, 40, 0.2),
+      0 0 80px rgba(150, 30, 20, 0.1),
+      0 2px 6px rgba(0, 0, 0, 0.9);
+    opacity: 0.92;
+  }
+  20% {
+    text-shadow:
+      0 0 28px rgba(220, 100, 70, 0.7),
+      0 0 60px rgba(200, 70, 50, 0.35),
+      0 0 110px rgba(160, 40, 25, 0.18),
+      0 2px 6px rgba(0, 0, 0, 0.9);
+    opacity: 1;
+  }
+  45% {
+    text-shadow:
+      0 0 20px rgba(210, 90, 60, 0.55),
+      0 0 45px rgba(190, 60, 40, 0.25),
+      0 0 90px rgba(150, 30, 20, 0.12),
+      0 2px 6px rgba(0, 0, 0, 0.9);
+    opacity: 0.95;
+  }
+  70% {
+    text-shadow:
+      0 0 30px rgba(220, 100, 70, 0.72),
+      0 0 62px rgba(200, 70, 50, 0.38),
+      0 0 115px rgba(160, 40, 25, 0.2),
+      0 2px 6px rgba(0, 0, 0, 0.9);
+    opacity: 1;
+  }
+  85% {
+    text-shadow:
+      0 0 16px rgba(210, 90, 60, 0.45),
+      0 0 38px rgba(190, 60, 40, 0.18),
+      0 0 75px rgba(150, 30, 20, 0.08),
+      0 2px 6px rgba(0, 0, 0, 0.9);
+    opacity: 0.9;
+  }
 }
 
 /* ── Profile Page ── */
@@ -755,7 +842,7 @@ body.theme-dark {
   letter-spacing: 6px;
   text-transform: uppercase;
   font-size: 0.75rem;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   margin-bottom: 14px;
   color: rgba(140, 200, 150, 0.8);
   text-shadow: 0 0 14px rgba(80, 180, 100, 0.55);
@@ -763,7 +850,7 @@ body.theme-dark {
 }
 
 .profile-hero h3 {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: "Cinzel Decorative", serif;
   font-size: clamp(1.6rem, 3vw, 2.8rem);
   color: #f0e6d3;
   margin-bottom: 8px;
@@ -805,7 +892,9 @@ body.theme-dark {
 
 .haunt-table__row {
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  transition: background 0.2s ease, opacity 0.3s ease;
+  transition:
+    background 0.2s ease,
+    opacity 0.3s ease;
 }
 
 .haunt-table__row:last-child {
@@ -881,7 +970,10 @@ body.theme-dark {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .haunt-table__remove:hover {
