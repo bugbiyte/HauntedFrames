@@ -1,31 +1,34 @@
 <%- include('partials/header'); -%>
 
-  <main class="home-landing">
-    <section class="home-hero">
-      <div class="home-hero__text">
-        <p class="home-hero__eyebrow">Welcome to Haunted Frames</p>
-        <p>A movie discovery experience curated by yours truly.</p>
-        <p>
-          Browse all horror moods. See what’s flickering tonight, and log in when you’re ready to let the reels roll.
-        </p>
-        <div class="home-hero__actions">
-          <% if (locals.user) { %>
-            <a href="/profile" class="btn btn--primary">My Profile</a>
-            <a href="/haunts" class="btn btn--outline">Summon A Mood</a>
-          <% } else { %>
-            <a href="/signup" class="btn btn--primary">Sign Up</a>
-            <a href="/haunts" class="btn btn--outline">Summon A Mood</a>
-            <a href="/login" class="btn btn--ghost">Log In</a>
-          <% } %>
-        </div>
-      </div>
-      <div class="home-hero__art" aria-hidden="true">
-        <div class="home-hero__image">
-          <img src="/movie_home.png" alt="A haunted cinema scene" loading="lazy" />
-        </div>
-        <div class="home-hero__mist"></div>
-      </div>
-    </section>
-  </main>
+<main class="home-landing">
+  <section class="home-hero">
 
-  <%- include('partials/footer'); -%>
+    <div class="home-hero__text">
+      <p class="home-hero__eyebrow">— Now Screening —</p>
+      <h1 class="home-hero__heading">Nightmares<br>on Demand.</h1>
+      <div class="home-hero__rule" aria-hidden="true"></div>
+      <p class="home-hero__body">
+        A movie discovery experience curated by yours truly.
+        Browse all horror moods. See what's flickering tonight.
+      </p>
+      <div class="home-hero__actions">
+        <% if (locals.user) { %>
+          <a href="/profile" class="btn btn--primary">My Profile</a>
+          <a href="/haunts" class="btn btn--outline">Summon A Mood</a>
+        <% } else { %>
+          <a href="/signup" class="btn btn--primary">Sign Up</a>
+          <a href="/haunts" class="btn btn--outline">Summon A Mood</a>
+          <a href="/login" class="btn btn--ghost">Log In</a>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="home-hero__visual" aria-hidden="true">
+      <img src="/hero-artwork.jpg" alt="" class="home-hero__img" />
+      <div class="home-hero__vignette"></div>
+    </div>
+
+  </section>
+</main>
+
+<%- include('partials/footer'); -%>
