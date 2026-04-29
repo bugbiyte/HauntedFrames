@@ -476,7 +476,7 @@ body.theme-dark {
   gap: 6px;
   list-style: none;
   margin: 0;
-  margin-left: left;
+  margin-left: auto;
 }
 
 .horror-nav__link {
