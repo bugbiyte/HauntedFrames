@@ -710,7 +710,7 @@ body.theme-dark {
 
 .home-hero__eyebrow {
   font-family: "Cinzel", serif;
-  font-size: 0.68rem;
+  font-size: 1.68rem;
   letter-spacing: 0.35rem;
   text-transform: uppercase;
   color: rgba(180, 120, 80, 0.75);
@@ -826,6 +826,28 @@ body.theme-dark {
   .home-hero__actions .btn {
     text-align: center;
     justify-content: center;
+  }
+}
+
+@media (max-width: 682px) {
+  .home-hero__eyebrow {
+    font-family: "Cinzel", serif;
+    font-size: 1.68rem;
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
+    color: rgba(180, 120, 80, 0.75);
+    margin-bottom: 22px;
+  }
+
+  .home-hero__actions {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .home-hero__actions .btn {
+    padding: 8px 10px;
+    font-size: 0.62rem;
+    letter-spacing: 0.08rem;
   }
 }
 
